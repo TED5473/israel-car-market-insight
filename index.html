@@ -82,8 +82,8 @@ a{color:var(--accent);text-decoration:none}
 var A={},C={},P='month';
 var CO={primary:'#1a56db',green:'#047857',orange:'#d97706',red:'#dc2626',purple:'#7c3aed',teal:'#0d9488',zeekr:'#e67e22',lynkco:'#00b4d8',palette:['#1a56db','#047857','#d97706','#dc2626','#7c3aed','#0d9488','#db2777','#06b6d4','#8b5cf6','#ec4899','#14b8a6','#f97316','#6366f1','#84cc16','#f43f5e','#0ea5e9','#e67e22','#00b4d8','#a855f7','#22c55e']};
 function E(id){return document.getElementById(id)}
-Promise.all([fetch('data/meta.json').then(r=>r.json()).catch(()=>({})),fetch('data/brands.json').then(r=>r.json()).catch(()=>({data:[]})),fetch('data/ev.json').then(r=>r.json()).catch(()=>({data:[]})),fetch('data/monthly.json').then(r=>r.json()).catch(()=>({data:[]}))]).then(function(r){
-A.meta=r[0];A.brands=r[1].data||[];A.ev=r[2].data||[];A.monthly=r[3].data||[];
+Promise.all([fetch('data/meta.json').then(r=>r.json()).catch(()=>({})),fetch('data/brands.json').then(r=>r.json()).catch(()=>({data:[]})),fetch('data/ev.json').then(r=>r.json()).catch(()=>({data:[]})),fetch('data/monthly.json').then(r=>r.json()).catch(()=>({data:[]})),fetch('data/models.json').then(r=>r.json()).catch(()=>({data:[]}))]).then(function(r){
+A.meta=r[0];A.brands=r[1].data||[];A.ev=r[2].data||[];A.monthly=r[3].data||[];A.models=r[4].data||[];
 E('lastUpdated').textContent=A.meta.last_updated||'N/A';E('footerUpdated').textContent=A.meta.last_updated||'N/A';
 build();
 }).catch(function(e){console.error(e);E('content').innerHTML='<div style="text-align:center;padding:60px;color:#dc2626"><h3>Failed to load data</h3></div>'});
@@ -97,7 +97,7 @@ h+=buildSummary(ad,b,ev);
 h+='<section class="section" id="overview"><div class="section-header"><div><h2 class="section-title">Market Overview</h2><p class="section-subtitle">Vehicle registration trends with EV penetration rates</p></div></div><div class="chart-card"><div class="chart chart-lg" id="chOv"></div></div></section>';
 h+='<section class="section" id="brands"><h2 class="section-title">Brand Market Share &amp; Rankings</h2><p class="section-subtitle">Top brands by registration volume and year-over-year growth</p><div class="chart-grid"><div class="chart-card"><h3>Top 20 Brands</h3><div class="chart" id="chBB"></div></div><div class="chart-card"><h3>Market Share Distribution</h3><div class="chart" id="chBP"></div></div><div class="chart-card chart-full"><h3>Full Brand Rankings</h3><div class="data-table-wrap"><table class="data-table" id="tblB"><thead><tr><th>#</th><th>Brand</th><th>Country</th><th>Segment</th><th>Mkt Share</th><th>YoY Growth</th><th>Position</th></tr></thead><tbody></tbody></table></div></div></div></section>';
 h+='<section class="section" id="ev"><h2 class="section-title">EV &amp; PHEV Market Deep Dive</h2><p class="section-subtitle">All countries, all segments, volume &amp; premium electric and plug-in hybrid analysis</p><div class="chart-grid"><div class="chart-card chart-full"><h3>EV Adoption Rate Over Time</h3><div class="chart chart-lg" id="chEVA"></div></div><div class="chart-card"><h3>EV/PHEV Brand Rankings (2025 YTD)</h3><div class="chart" id="chEVB"></div></div><div class="chart-card"><h3>Powertrain Split</h3><div class="chart chart-sm" id="chFT"></div></div><div class="chart-card chart-full"><h3>EV/PHEV Brand Comparison</h3><div class="data-table-wrap"><table class="data-table" id="tblEV"><thead><tr><th>#</th><th>Brand</th><th>Type</th><th>Seg.</th><th>2024 Units</th><th>2025 YTD</th><th>Growth</th><th>EV Share</th></tr></thead><tbody></tbody></table></div></div></div></section>';
-h+='<section class="section" id="competitive"><h2 class="section-title">Zeekr &amp; Lynk&amp;Co Competitive Landscape</h2><p class="section-subtitle">Head-to-head comparison against all major competitors strategic positioning</p><div class="chart-grid"><div class="chart-card chart-full"><h3>Growth Trajectory: Key Players</h3><div class="chart chart-lg" id="chGr"></div></div><div class="chart-card chart-full"><h3>Positioning Matrix: Market Share vs Growth Rate</h3><div class="chart chart-lg" id="chMx"></div></div><div class="chart-card chart-full"><h3>Competitive Benchmark Table</h3><div class="data-table-wrap"><table class="data-table" id="tblC"><thead><tr><th>Brand</th><th>Country</th><th>Segment</th><th>Type</th><th>Share</th><th>Growth</th><th>Est. Price (ILS)</th><th>Position</th></tr></thead><tbody></tbody></table></div></div></div></section>';
+h+='<section class="section" id="competitive"><h2 class="section-title">Zeekr &amp; Lynk&amp;Co Competitive Landscape</h2><p class="section-subtitle">Head-to-head comparison against all major competitors strategic positioning</p><div class="chart-grid"><div class="chart-card chart-full"><h3>Growth Trajectory: Key Players</h3><div class="chart chart-lg" id="chGr"></div></div><div class="chart-card chart-full"><h3>Model Positioning: Car Length vs Price (Bubble = Sales Volume)</h3><div class="time-selector" id="mdSel" style="margin-bottom:10px"><button data-mp="2023">2023</button><button data-mp="2024">2024</button><button data-mp="2025" class="active">2025</button><button data-mp="2026q1">2026 Q1</button></div><div class="chart chart-lg" id="chMx"></div></div><div class="chart-card chart-full"><h3>Competitive Benchmark Table</h3><div class="data-table-wrap"><table class="data-table" id="tblC"><thead><tr><th>Brand</th><th>Country</th><th>Segment</th><th>Type</th><th>Share</th><th>Growth</th><th>Est. Price (ILS)</th><th>Position</th></tr></thead><tbody></tbody></table></div></div></div></section>';
 h+='<section class="section" id="insights"><h2 class="section-title">Strategic Insights &amp; Recommendations</h2><p class="section-subtitle">Data-driven analysis for Zeekr and Lynk&amp;Co Israel market strategy</p><div class="insight-grid" id="insCards"></div></section>';
 E('content').innerHTML=h;
 
@@ -197,14 +197,35 @@ var ev=A.ev||[];var b=A.brands||[];
 var gc=echarts.init(E('chGr'));C.gc=gc;
 var kb=ev.filter(function(d){var bn=(d.brand||'').toLowerCase();return['zeekr','lynk&co','byd','tesla','mg','hyundai','xpeng','nio','geely','genesis','bmw','mercedes'].indexOf(bn)>=0});
 gc.setOption({tooltip:{trigger:'axis'},legend:{type:'scroll',bottom:0},grid:{left:70,right:40,top:20,bottom:50},xAxis:{type:'category',data:['2023','2024','2025 YTD']},yAxis:{type:'value',name:'Market Share %'},series:kb.map(function(d){var s24=parseFloat(d.market_share||0);var s23=Math.max(0,s24/(1+(parseFloat(d.growth_2024||d.growth||0)/100)));var s25=s24*(1+(parseFloat(d.growth_2025||d.growth||0)/100));var bn=(d.brand||'').toLowerCase();var cl=CO.primary;if(bn==='zeekr')cl=CO.zeekr;else if(bn.includes('lynk'))cl=CO.lynkco;else if(bn==='byd')cl='#22c55e';else if(bn==='tesla')cl=CO.red;return{name:d.brand,type:'line',data:[s23,s24,s25],lineStyle:{width:(bn==='zeekr'||bn.includes('lynk'))?3:2,color:cl},itemStyle:{color:cl},symbol:(bn==='zeekr'||bn.includes('lynk'))?'diamond':'circle',symbolSize:(bn==='zeekr'||bn.includes('lynk'))?8:5}})});
-var mc=echarts.init(E('chMx'));C.mc=mc;
-var ai=[].concat(b.map(function(d){return Object.assign({},d,{units:parseFloat(d.total_units_2025_ytd||d.total_units_2024||0)})}),ev.map(function(d){return Object.assign({},d,{market_share:d.ev_market_share||d.market_share||0,growth:d.growth_2025||d.growth||0,units:parseFloat(d.units_2025_ytd||d.units_2025||0)})}));
-var un=new Map();ai.forEach(function(d){if(!un.has(d.brand))un.set(d.brand,d)});
-var md=Array.from(un.values()).filter(function(d){var s=parseFloat(d.market_share||d.ev_market_share||0);var g=parseFloat(d.growth||0);return s>0.01||g>0.1}).map(function(d){var s=parseFloat(d.market_share||d.ev_market_share||0);var g=parseFloat(d.growth||0);var u=parseFloat(d.units||d.total_units_2025_ytd||d.total_units_2024||d.market_share||0)*100;var bn=(d.brand||'').toLowerCase();return{name:d.brand,value:[s,g,u],itemStyle:{color:bn==='zeekr'?CO.zeekr:bn.includes('lynk')?CO.lynkco:(bn==='byd'||bn==='mg'||bn==='geely'||bn==='xpeng')?'#22c55e':bn==='tesla'?CO.red:CO.primary}}});
-var ob=md.filter(function(d){return d.name.toLowerCase()==='zeekr'||d.name.toLowerCase().includes('lynk')});
-var cb=md.filter(function(d){return d.name.toLowerCase()!=='zeekr'&&!d.name.toLowerCase().includes('lynk')});
-var mu=Math.max.apply(null,md.map(function(d){return d.value[2]}));
-mc.setOption({tooltip:{trigger:'item',formatter:function(p){return'<b>'+p.name+'</b><br/>Share: '+p.value[0].toFixed(2)+'%<br/>Growth: '+p.value[1].toFixed(1)+'%'}},grid:{left:70,right:40,top:50,bottom:60},xAxis:{type:'value',name:'Market Share %',splitLine:{show:false},axisLabel:{fontSize:11}},yAxis:{type:'value',name:'YoY Growth %',axisLabel:{formatter:function(v){return v+'%'},fontSize:11},splitLine:{lineStyle:{color:'#e5e7eb',type:'dashed'}}},series:[{name:'Competitors',type:'scatter',data:cb,symbolSize:function(v){return Math.min(35,Math.max(8,Math.sqrt(v[2]/Math.max(mu,1))*35))},label:{show:true,formatter:'{b}',position:'right',fontSize:9,offset:[4,0]}},{name:'Zeekr/Lynk&Co',type:'scatter',data:ob,symbolSize:function(v){return Math.min(40,Math.max(12,Math.sqrt(v[2]/Math.max(mu,1))*40+4))},label:{show:true,formatter:'{b}',position:'right',fontSize:10,fontWeight:'bold',offset:[4,0]}}]});
+
+var mdP='2025';renderModelBubble(mdP);
+E('mdSel').addEventListener('click',function(e){if(e.target.tagName==='BUTTON'){this.querySelectorAll('button').forEach(function(b){b.classList.remove('active')});e.target.classList.add('active');mdP=e.target.dataset.mp;renderModelBubble(mdP)}});
+}
+
+function renderModelBubble(period){
+var models=A.models||[];if(!models.length)return;
+var mc=echarts.init(E('chMx'));C.mc=mc;if(mc._disposed)mc=echarts.init(E('chMx'));
+mc.clear();
+
+var sf='sales_'+period.replace('q','Q').toLowerCase();
+var all=[].concat(models.map(function(d){var s=parseFloat(d[sf]||0);var l=parseFloat(d.length_mm||0);var p=parseFloat(d.price_ils||0);var bn=(d.brand||'').toLowerCase();var tp=(d.type||'');var seg=(d.segment||'');
+var cl=CO.primary;if(bn==='zeekr')cl=CO.zeekr;else if(bn.includes('lynk'))cl=CO.lynkco;else if(bn==='byd')cl='#22c55e';else if(bn==='tesla')cl=CO.red;else if(bn==='xpeng'||bn==='nio')cl=CO.purple;else if(bn==='mg')cl=CO.teal;else if(bn==='geely')cl='#84cc16';else if(bn==='hyundai'||bn==='kia')cl=CO.orange;else if(bn==='genesis')cl='#a855f7';else if(tp.toLowerCase().includes('ev')||tp.toLowerCase().includes('phev'))cl=CO.green;else cl='#94a3b8';
+return{name:d.model,value:[l,p,s],itemStyle:{color:cl},brand:d.brand,type:tp,segment:seg,sales:s};
+}));
+
+all.sort(function(a,b){return b.sales-a.sales});
+var maxS=Math.max.apply(null,all.map(function(d){return d.sales}));
+var hasData=all.filter(function(d){return d.sales>0});
+if(!hasData.length)hasData=all;
+
+// Split into Zeekr/LynkCo and others for layering
+var ours=hasData.filter(function(d){var bn=(d.brand||'').toLowerCase();return bn==='zeekr'||bn.includes('lynk')});
+var others=hasData.filter(function(d){var bn=(d.brand||'').toLowerCase();return bn!=='zeekr'&&!bn.includes('lynk')});
+
+var smin=6,smax=42;
+function sz(v){return Math.min(smax,Math.max(smin,Math.sqrt(v/Math.max(maxS,1))*smax))};
+
+mc.setOption({tooltip:{trigger:'item',formatter:function(p){return'<b>'+p.name+'</b> ('+p.data.brand+')<br/>Length: '+p.value[0]+'mm<br/>Price: ILS '+p.value[1].toLocaleString()+'<br/>Sales ('+period+'): '+p.value[2].toLocaleString()+' units<br/>Type: '+p.data.type+' | '+p.data.segment}},grid:{left:80,right:80,top:40,bottom:60},xAxis:{type:'value',name:'Car Length (mm)',splitLine:{show:false},axisLabel:{fontSize:11},min:4100,max:5100},yAxis:{type:'value',name:'Base MSRP (ILS)',axisLabel:{formatter:function(v){return(v/1000).toFixed(0)+'K'},fontSize:11},splitLine:{lineStyle:{color:'#e5e7eb',type:'dashed'}},min:90000,max:360000},series:[{name:'All Models',type:'scatter',data:others,symbolSize:function(v){return sz(v[2])},label:{show:true,formatter:function(p){return p.name.length>12?p.name.substring(0,12)+'..':p.name},position:'right',fontSize:9,offset:[4,0],emphasis:{fontSize:12,fontWeight:'bold'}},emphasis:{focus:'series',label:{fontSize:13,fontWeight:'bold'}}},{name:'Zeekr/Lynk&Co',type:'scatter',data:ours,symbolSize:function(v){return Math.min(smax+8,Math.max(smin+4,sz(v[2])+6))},label:{show:true,formatter:function(p){return p.name},position:'right',fontSize:10,fontWeight:'bold',offset:[4,0],emphasis:{fontSize:14,fontWeight:'bold'}},emphasis:{focus:'series'}}]});
 }
 
 function renderTblComp(){

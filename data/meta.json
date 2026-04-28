@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-04-28 12:48:46",
+  "last_updated": "2026-04-28 05:00:45",
   "source_url": "https://public.tableau.com/app/profile/g.stat/viz/VehicleRegistrationData_16986687491380/Dashboard4",
   "status": "FALLBACK_DATA_USED",
   "error": "'NoneType' object has no attribute 'text'",
   "log": [
-    "[2026-04-28 12:48:45] Starting Tableau scrape...",
-    "[2026-04-28 12:48:46] SCRAPE FAILED: 'NoneType' object has no attribute 'text'",
-    "[2026-04-28 12:48:46] Traceback (most recent call last):\n  File \"C:\\Users\\ZHEN~1.WAN\\AppData\\Local\\Temp\\israel-car-market\\scraper\\scrape.py\", line 259, in <module>\n    scrape()\n  File \"C:\\Users\\ZHEN~1.WAN\\AppData\\Local\\Temp\\israel-car-market\\scraper\\scrape.py\", line 65, in scrape\n    ts.loads(TABLEAU_URL)\n  File \"C:\\Program Files\\Python310\\lib\\site-packages\\tableauscraper\\TableauScraper.py\", line 80, in loads\n    soup.find(\"textarea\", {\"id\": \"tsConfigContainer\"}).text\nAttributeError: 'NoneType' object has no attribute 'text'\n",
-    "[2026-04-28 12:48:46] Generating fallback data..."
+    "[2026-04-28 05:00:45] Starting Tableau scrape...",
+    "[2026-04-28 05:00:45] SCRAPE FAILED: 'NoneType' object has no attribute 'text'",
+    "[2026-04-28 05:00:45] Traceback (most recent call last):\n  File \"/home/runner/work/israel-car-market-insight/israel-car-market-insight/scraper/scrape.py\", line 259, in <module>\n    scrape()\n  File \"/home/runner/work/israel-car-market-insight/israel-car-market-insight/scraper/scrape.py\", line 65, in scrape\n    ts.loads(TABLEAU_URL)\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/tableauscraper/TableauScraper.py\", line 80, in loads\n    soup.find(\"textarea\", {\"id\": \"tsConfigContainer\"}).text\nAttributeError: 'NoneType' object has no attribute 'text'\n",
+    "[2026-04-28 05:00:45] Generating fallback data..."
   ]
 }

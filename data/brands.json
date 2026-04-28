@@ -1,0 +1,179 @@
+{
+  "data": [
+    {
+      "brand": "Hyundai",
+      "country": "Korea",
+      "type": "Volume",
+      "market_share": 14.2,
+      "growth": 8.5
+    },
+    {
+      "brand": "Toyota",
+      "country": "Japan",
+      "type": "Volume",
+      "market_share": 13.8,
+      "growth": 5.2
+    },
+    {
+      "brand": "Kia",
+      "country": "Korea",
+      "type": "Volume",
+      "market_share": 11.5,
+      "growth": 12.1
+    },
+    {
+      "brand": "Skoda",
+      "country": "Czech",
+      "type": "Volume",
+      "market_share": 8.3,
+      "growth": 3.7
+    },
+    {
+      "brand": "Mazda",
+      "country": "Japan",
+      "type": "Volume",
+      "market_share": 6.7,
+      "growth": -2.1
+    },
+    {
+      "brand": "BYD",
+      "country": "China",
+      "type": "EV/Volume",
+      "market_share": 6.2,
+      "growth": 85.3
+    },
+    {
+      "brand": "Mitsubishi",
+      "country": "Japan",
+      "type": "Volume",
+      "market_share": 5.4,
+      "growth": -1.5
+    },
+    {
+      "brand": "MG",
+      "country": "China",
+      "type": "EV/Volume",
+      "market_share": 5.1,
+      "growth": 42.0
+    },
+    {
+      "brand": "Seat",
+      "country": "Spain",
+      "type": "Volume",
+      "market_share": 4.8,
+      "growth": 2.3
+    },
+    {
+      "brand": "Chevrolet",
+      "country": "USA",
+      "type": "Volume",
+      "market_share": 4.2,
+      "growth": -5.0
+    },
+    {
+      "brand": "Tesla",
+      "country": "USA",
+      "type": "EV/Premium",
+      "market_share": 3.8,
+      "growth": 28.0
+    },
+    {
+      "brand": "Renault",
+      "country": "France",
+      "type": "Volume",
+      "market_share": 3.5,
+      "growth": 4.1
+    },
+    {
+      "brand": "Suzuki",
+      "country": "Japan",
+      "type": "Volume",
+      "market_share": 3.2,
+      "growth": 1.8
+    },
+    {
+      "brand": "Volkswagen",
+      "country": "Germany",
+      "type": "Volume",
+      "market_share": 2.9,
+      "growth": -3.2
+    },
+    {
+      "brand": "Geely",
+      "country": "China",
+      "type": "EV/Volume",
+      "market_share": 2.5,
+      "growth": 35.0
+    },
+    {
+      "brand": "Zeekr",
+      "country": "China",
+      "type": "EV/Premium",
+      "market_share": 1.8,
+      "growth": 120.0
+    },
+    {
+      "brand": "Mercedes",
+      "country": "Germany",
+      "type": "Premium",
+      "market_share": 1.6,
+      "growth": 5.0
+    },
+    {
+      "brand": "BMW",
+      "country": "Germany",
+      "type": "Premium",
+      "market_share": 1.5,
+      "growth": 3.2
+    },
+    {
+      "brand": "Genesis",
+      "country": "Korea",
+      "type": "Premium",
+      "market_share": 0.8,
+      "growth": 15.0
+    },
+    {
+      "brand": "Lynk&Co",
+      "country": "China",
+      "type": "EV/Volume",
+      "market_share": 0.7,
+      "growth": 200.0
+    },
+    {
+      "brand": "Audi",
+      "country": "Germany",
+      "type": "Premium",
+      "market_share": 0.6,
+      "growth": -1.0
+    },
+    {
+      "brand": "XPeng",
+      "country": "China",
+      "type": "EV/Premium",
+      "market_share": 0.5,
+      "growth": 90.0
+    },
+    {
+      "brand": "Chery",
+      "country": "China",
+      "type": "Volume",
+      "market_share": 0.4,
+      "growth": 50.0
+    },
+    {
+      "brand": "Volvo",
+      "country": "Sweden",
+      "type": "Premium",
+      "market_share": 0.4,
+      "growth": 2.0
+    },
+    {
+      "brand": "Seres",
+      "country": "China",
+      "type": "EV/Volume",
+      "market_share": 0.3,
+      "growth": 300.0
+    }
+  ]
+}

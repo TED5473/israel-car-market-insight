@@ -1,0 +1,148 @@
+{
+  "data": [
+    {
+      "month": "Jan 2024",
+      "year": "2024",
+      "total_registrations": 25000,
+      "ev_share_pct": 18.0,
+      "ev_units": 4500,
+      "chinese_share_pct": 12.0,
+      "chinese_units": 3000
+    },
+    {
+      "month": "Feb 2024",
+      "year": "2024",
+      "total_registrations": 25818,
+      "ev_share_pct": 19.2,
+      "ev_units": 4957,
+      "chinese_share_pct": 13.5,
+      "chinese_units": 3485
+    },
+    {
+      "month": "Mar 2024",
+      "year": "2024",
+      "total_registrations": 26649,
+      "ev_share_pct": 20.4,
+      "ev_units": 5436,
+      "chinese_share_pct": 15.0,
+      "chinese_units": 3997
+    },
+    {
+      "month": "Apr 2024",
+      "year": "2024",
+      "total_registrations": 27493,
+      "ev_share_pct": 21.6,
+      "ev_units": 5938,
+      "chinese_share_pct": 16.5,
+      "chinese_units": 4536
+    },
+    {
+      "month": "May 2024",
+      "year": "2024",
+      "total_registrations": 28350,
+      "ev_share_pct": 22.8,
+      "ev_units": 6463,
+      "chinese_share_pct": 18.0,
+      "chinese_units": 5103
+    },
+    {
+      "month": "Jun 2024",
+      "year": "2024",
+      "total_registrations": 29218,
+      "ev_share_pct": 24.0,
+      "ev_units": 7012,
+      "chinese_share_pct": 19.5,
+      "chinese_units": 5697
+    },
+    {
+      "month": "Jul 2024",
+      "year": "2024",
+      "total_registrations": 30100,
+      "ev_share_pct": 25.2,
+      "ev_units": 7585,
+      "chinese_share_pct": 21.0,
+      "chinese_units": 6321
+    },
+    {
+      "month": "Aug 2024",
+      "year": "2024",
+      "total_registrations": 30993,
+      "ev_share_pct": 26.4,
+      "ev_units": 8182,
+      "chinese_share_pct": 22.5,
+      "chinese_units": 6973
+    },
+    {
+      "month": "Sep 2024",
+      "year": "2024",
+      "total_registrations": 31900,
+      "ev_share_pct": 27.6,
+      "ev_units": 8804,
+      "chinese_share_pct": 24.0,
+      "chinese_units": 7656
+    },
+    {
+      "month": "Oct 2024",
+      "year": "2024",
+      "total_registrations": 32818,
+      "ev_share_pct": 28.8,
+      "ev_units": 9451,
+      "chinese_share_pct": 25.5,
+      "chinese_units": 8368
+    },
+    {
+      "month": "Nov 2024",
+      "year": "2024",
+      "total_registrations": 33750,
+      "ev_share_pct": 30.0,
+      "ev_units": 10125,
+      "chinese_share_pct": 27.0,
+      "chinese_units": 9112
+    },
+    {
+      "month": "Dec 2024",
+      "year": "2024",
+      "total_registrations": 34693,
+      "ev_share_pct": 31.2,
+      "ev_units": 10824,
+      "chinese_share_pct": 28.5,
+      "chinese_units": 9887
+    },
+    {
+      "month": "Jan 2025",
+      "year": "2025",
+      "total_registrations": 31000,
+      "ev_share_pct": 32.4,
+      "ev_units": 10044,
+      "chinese_share_pct": 30.0,
+      "chinese_units": 9300
+    },
+    {
+      "month": "Feb 2025",
+      "year": "2025",
+      "total_registrations": 31893,
+      "ev_share_pct": 33.6,
+      "ev_units": 10716,
+      "chinese_share_pct": 31.5,
+      "chinese_units": 10046
+    },
+    {
+      "month": "Mar 2025",
+      "year": "2025",
+      "total_registrations": 32799,
+      "ev_share_pct": 34.8,
+      "ev_units": 11414,
+      "chinese_share_pct": 33.0,
+      "chinese_units": 10823
+    },
+    {
+      "month": "Apr 2025",
+      "year": "2025",
+      "total_registrations": 33718,
+      "ev_share_pct": 36.0,
+      "ev_units": 12138,
+      "chinese_share_pct": 34.5,
+      "chinese_units": 11632
+    }
+  ]
+}

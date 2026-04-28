@@ -59,11 +59,62 @@ def dataframe_to_list(df):
         result.append(item)
     return result
 
+def scrape_with_playwright():
+    """Use Playwright (headless browser) to extract Tableau data from JS-rendered pages."""
+    log("Attempting Playwright headless browser extraction...")
+    import time
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-gpu'])
+        context = browser.new_context(viewport={'width': 1920, 'height': 1080})
+        page = context.new_page()
+
+        log(f"Loading Tableau dashboard: {TABLEAU_URL}")
+        page.goto(TABLEAU_URL, wait_until='networkidle', timeout=60000)
+        time.sleep(5)
+
+        ts_config = page.query_selector("textarea#tsConfigContainer")
+        if not ts_config:
+            log("No tsConfigContainer found in JS-rendered page either.")
+            browser.close()
+            return None
+
+        config_text = ts_config.get_attribute("value") or ts_config.inner_text()
+        if not config_text:
+            log("tsConfigContainer found but empty.")
+            browser.close()
+            return None
+
+        log("Extracted Tableau config from Playwright. Passing to tableauscraper...")
+
+        ts = TS()
+        ts._configText = config_text
+        ts._extractConfig()
+        ts._getSession()
+        workbook = ts.getWorkbook()
+        browser.close()
+        return workbook
+
+
 def scrape():
     log("Starting Tableau scrape...")
-    ts = TS()
-    ts.loads(TABLEAU_URL)
-    workbook = ts.getWorkbook()
+    workbook = None
+
+    try:
+        workbook = scrape_with_playwright()
+    except Exception as e:
+        log(f"Playwright extraction failed: {e}")
+
+    if workbook is None:
+        log("Falling back to direct tableauscraper attempt...")
+        try:
+            ts2 = TS()
+            ts2.loads(TABLEAU_URL)
+            workbook = ts2.getWorkbook()
+        except Exception as e:
+            log(f"Direct tableauscraper also failed: {e}")
+            raise RuntimeError("Both Playwright and direct approaches failed to extract data")
 
     log(f"Found {len(workbook.worksheets)} worksheets")
     for i, ws in enumerate(workbook.worksheets):

@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-04-28 07:54:26",
+  "last_updated": "2026-05-04 06:19:50",
   "source_url": "https://public.tableau.com/app/profile/g.stat/viz/VehicleRegistrationData_16986687491380/Dashboard4",
   "status": "FALLBACK_DATA_USED",
   "error": "Both Playwright and direct approaches failed to extract data",
   "log": [
-    "[2026-04-28 07:53:24] Starting Tableau scrape...",
-    "[2026-04-28 07:53:24] Attempting Playwright headless browser extraction...",
-    "[2026-04-28 07:53:26] Loading Tableau dashboard: https://public.tableau.com/app/profile/g.stat/viz/VehicleRegistrationData_16986687491380/Dashboard4",
-    "[2026-04-28 07:54:26] Playwright extraction failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://public.tableau.com/app/profile/g.stat/viz/VehicleRegistrationData_16986687491380/Dashboard4\", waiting until \"networkidle\"\n",
-    "[2026-04-28 07:54:26] Falling back to direct tableauscraper attempt...",
-    "[2026-04-28 07:54:26] Direct tableauscraper also failed: 'NoneType' object has no attribute 'text'",
-    "[2026-04-28 07:54:26] SCRAPE FAILED: Both Playwright and direct approaches failed to extract data",
-    "[2026-04-28 07:54:26] Traceback (most recent call last):\n  File \"/home/runner/work/israel-car-market-insight/israel-car-market-insight/scraper/scrape.py\", line 113, in scrape\n    ts2.loads(TABLEAU_URL)\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/tableauscraper/TableauScraper.py\", line 80, in loads\n    soup.find(\"textarea\", {\"id\": \"tsConfigContainer\"}).text\nAttributeError: 'NoneType' object has no attribute 'text'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/runner/work/israel-car-market-insight/israel-car-market-insight/scraper/scrape.py\", line 310, in <module>\n    scrape()\n  File \"/home/runner/work/israel-car-market-insight/israel-car-market-insight/scraper/scrape.py\", line 117, in scrape\n    raise RuntimeError(\"Both Playwright and direct approaches failed to extract data\")\nRuntimeError: Both Playwright and direct approaches failed to extract data\n",
-    "[2026-04-28 07:54:26] Generating fallback data..."
+    "[2026-05-04 06:18:49] Starting Tableau scrape...",
+    "[2026-05-04 06:18:49] Attempting Playwright headless browser extraction...",
+    "[2026-05-04 06:18:49] Loading Tableau dashboard: https://public.tableau.com/app/profile/g.stat/viz/VehicleRegistrationData_16986687491380/Dashboard4",
+    "[2026-05-04 06:19:49] Playwright extraction failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://public.tableau.com/app/profile/g.stat/viz/VehicleRegistrationData_16986687491380/Dashboard4\", waiting until \"networkidle\"\n",
+    "[2026-05-04 06:19:49] Falling back to direct tableauscraper attempt...",
+    "[2026-05-04 06:19:50] Direct tableauscraper also failed: 'NoneType' object has no attribute 'text'",
+    "[2026-05-04 06:19:50] SCRAPE FAILED: Both Playwright and direct approaches failed to extract data",
+    "[2026-05-04 06:19:50] Traceback (most recent call last):\n  File \"/home/runner/work/israel-car-market-insight/israel-car-market-insight/scraper/scrape.py\", line 113, in scrape\n    ts2.loads(TABLEAU_URL)\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/tableauscraper/TableauScraper.py\", line 80, in loads\n    soup.find(\"textarea\", {\"id\": \"tsConfigContainer\"}).text\nAttributeError: 'NoneType' object has no attribute 'text'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/runner/work/israel-car-market-insight/israel-car-market-insight/scraper/scrape.py\", line 310, in <module>\n    scrape()\n  File \"/home/runner/work/israel-car-market-insight/israel-car-market-insight/scraper/scrape.py\", line 117, in scrape\n    raise RuntimeError(\"Both Playwright and direct approaches failed to extract data\")\nRuntimeError: Both Playwright and direct approaches failed to extract data\n",
+    "[2026-05-04 06:19:50] Generating fallback data..."
   ]
 }
